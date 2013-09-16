@@ -7,7 +7,7 @@ class unity_cache_server::config {
   require boxen::config
 
   $datadir     = "${boxen::config::datadir}/unity_cache_server"
-  $executable  = '/Applications/Unity Cache Server/RunOSX.command'
+  $executable  = '/Applications/CacheServer/RunOSX.command'
   $consolefile = "${logdir}/console.log"
   $port        = 8125
   $size        = 53687091200

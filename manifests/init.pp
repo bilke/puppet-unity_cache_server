@@ -8,9 +8,9 @@ class unity_cache_server {
     ensure => directory,
   }
 
-  package { 'Unity Cache Server':
+  package { 'CacheServer':
     provider => 'compressed_app',
-    source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.2.1.zip'
+    source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.2.1.zip',
   }
 
   file { '/Library/LaunchDaemons/unity_cache_server.plist':
@@ -18,9 +18,11 @@ class unity_cache_server {
     group   => 'wheel',
     notify  => Service['unity_cache_server'],
     owner   => 'root',
+    require => Package['CacheServer'],
   }
 
   service { 'unity_cache_server':
-    ensure => running,
+    ensure  => running,
+    require => File['/Library/LaunchDaemons/unity_cache_server.plist'],
   }
 }
