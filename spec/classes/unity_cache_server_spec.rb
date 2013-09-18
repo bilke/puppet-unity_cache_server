@@ -16,6 +16,6 @@ describe 'unity_cache_server' do
       :provider => 'compressed_app'
     })
 
-    should contain_service('unity_cache_server').with(:ensure => 'running')
+    should contain_service('dev.unity_cache_server').with(:ensure => 'running')
   end
 end

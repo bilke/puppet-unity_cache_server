@@ -1,4 +1,8 @@
-# This is a placeholder class.
+# Public: Install Unity Cache Server
+#
+# Examples
+#
+#   include unity_cache_server
 class unity_cache_server {
   include unity_cache_server::config
 
@@ -16,12 +20,12 @@ class unity_cache_server {
   file { '/Library/LaunchDaemons/unity_cache_server.plist':
     content => template('unity_cache_server/unity_cache_server.plist.erb'),
     group   => 'wheel',
-    notify  => Service['unity_cache_server'],
+    notify  => Service['dev.unity_cache_server'],
     owner   => 'root',
     require => Package['CacheServer'],
   }
 
-  service { 'unity_cache_server':
+  service { 'dev.unity_cache_server':
     ensure  => running,
     require => File['/Library/LaunchDaemons/unity_cache_server.plist'],
   }
