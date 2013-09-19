@@ -27,6 +27,6 @@ class unity_cache_server {
 
   service { 'dev.unity_cache_server':
     ensure  => running,
-    require => File['/Library/LaunchDaemons/unity_cache_server.plist'],
+    require => File['/Library/LaunchDaemons/dev.unity_cache_server.plist'],
   }
 }
