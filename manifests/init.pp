@@ -17,7 +17,7 @@ class unity_cache_server {
     source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.2.1.zip',
   }
 
-  file { '/Library/LaunchDaemons/unity_cache_server.plist':
+  file { '/Library/LaunchDaemons/dev.unity_cache_server.plist':
     content => template('unity_cache_server/unity_cache_server.plist.erb'),
     group   => 'wheel',
     notify  => Service['dev.unity_cache_server'],
