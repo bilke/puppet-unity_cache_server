@@ -8,6 +8,7 @@ class unity_cache_server {
 
   file { [
     $unity_cache_server::config::datadir,
+    $unity_cache_server::config::logdir,
   ]:
     ensure => directory,
   }
