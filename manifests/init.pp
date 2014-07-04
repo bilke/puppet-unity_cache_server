@@ -14,7 +14,7 @@ class unity_cache_server {
 
   package { 'CacheServer':
     provider => 'compressed_app',
-    source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.5.0.zip',
+    source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.5.1.zip',
   }
 
   file { '/Library/LaunchDaemons/dev.unity_cache_server.plist':

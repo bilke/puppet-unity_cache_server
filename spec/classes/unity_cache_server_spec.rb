@@ -12,7 +12,7 @@ describe 'unity_cache_server' do
     should contain_class('unity_cache_server::config')
 
     should contain_package('CacheServer').with({
-      :source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.5.0.zip',
+      :source   => 'http://netstorage.unity3d.com/unity/CacheServer-4.5.1.zip',
       :provider => 'compressed_app'
     })
 
